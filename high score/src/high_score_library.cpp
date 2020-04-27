@@ -37,6 +37,11 @@ namespace score
 
 	void DeleteHalf(Scores _highScore[_sizeList], bool upperHalf)
 	{
+		int aux = 0;
+		int newDat = 0;
+		string auxString = " ";
+		string newName = " ";
+
 		int half = _sizeList / 2;
 
 		if (upperHalf == true)
@@ -46,6 +51,24 @@ namespace score
 				_highScore[i].name = " ";
 				_highScore[i].score = 0;
 			}
+
+			for (int i = 0; i < _sizeList - 1; i++)
+			{
+				for (int i = 0; i < _sizeList - 1; i++)
+				{
+					if (_highScore[i + 1].score >= _highScore[i].score)
+					{
+						aux = _highScore[i + 1].score;
+						auxString = _highScore[i + 1].name;
+
+						_highScore[i + 1].score = _highScore[i].score;
+						_highScore[i + 1].name = _highScore[i].name;
+
+						_highScore[i].score = aux;
+						_highScore[i].name = auxString;
+					}
+				}
+			}
 		}
 		else
 		{
@@ -53,6 +76,24 @@ namespace score
 			{
 				_highScore[i].name = " ";
 				_highScore[i].score = 0;
+			}
+
+			for (int i = 0; i < _sizeList - 1; i++)
+			{
+				for (int i = 0; i < _sizeList - 1; i++)
+				{
+					if (_highScore[i + 1].score >= _highScore[i].score)
+					{
+						aux = _highScore[i + 1].score;
+						auxString = _highScore[i + 1].name;
+
+						_highScore[i + 1].score = _highScore[i].score;
+						_highScore[i + 1].name = _highScore[i].name;
+
+						_highScore[i].score = aux;
+						_highScore[i].name = auxString;
+					}
+				}
 			}
 		}
 	}
@@ -106,7 +147,7 @@ namespace score
 	{
 		for (int i = 0; i < _sizeList; i++)
 		{
-			cout << " * " << highScore[i].name << " -- " << highScore[i].score << "\n"<< endl;
+			cout << " " << i + 1 << " "<< highScore[i].name << " -- " << highScore[i].score << "\n"<< endl;
 		}
 	}
 }

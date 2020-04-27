@@ -11,7 +11,7 @@ int main()
 	// ---
 
 	Clean(_highScore);
-	AddNewScore(_highScore, "TOMAS", 20);
+	AddNewScore(_highScore, "TOMAS", 390);
 	AddNewScore(_highScore, "JOSE", 10);
 	AddNewScore(_highScore, "MIGUEL", 15);
 	AddNewScore(_highScore, "MIGUEL2", 35);
@@ -23,6 +23,9 @@ int main()
 	AddNewScore(_highScore, "MIGUEL8", 40);
 
 	//DeleteSpecificPlayer(_highScore, "MIGUEL");
+	//DeleteHalf(_highScore, true);
+
+	AddNewScore(_highScore, "MIGUEL8", 39);
 
 	ShowHighScore(_highScore);
 
