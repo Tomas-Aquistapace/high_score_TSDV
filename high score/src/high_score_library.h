@@ -18,9 +18,12 @@ namespace score
 	// Ej: Scores _highScore[_sizeList];
 
 
-	void Clean(Scores _highScore[_sizeList]);							// Limpia todas las posiciones del array
-	void AddNewScore(Scores _highScore[_sizeList], int new_score);		// Añade un nuevo valor a la tabla, eliminando al numero menor (si tiene)
-	void ShowHighScore(Scores _highScore[_sizeList]);					// Muestra toda la tabla por pantalla
+	void Clean(Scores _highScore[_sizeList]);												// Limpia todas las posiciones del array
+	void AddNewScore(Scores _highScore[_sizeList], string namePlayer, int new_score);		// Añade un nuevo valor a la tabla, eliminando al numero menor (si tiene)
+	void DeleteHalf(Scores _highScore[_sizeList], bool upperHalf);
+	void DeleteSpecificPlayer(Scores _highScore[_sizeList], string playerToDelete);
+	void ShowHighScore(Scores _highScore[_sizeList]);										// Muestra toda la tabla por pantalla
+
 }
 
 #endif // !HIGH_SCORE_H
