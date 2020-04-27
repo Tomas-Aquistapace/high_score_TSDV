@@ -1,37 +1,40 @@
-#include "high_score.h"
+#include "high_score_library.h"
+
 
 namespace score
 {
-	void Clean(int highScore[], int total_scores)
+	void Clean(Scores highScore[_sizeList])
 	{
-		for (int i = 0; i < total_scores; i++)
+		for (int i = 0; i < _sizeList; i++)
 		{
-			highScore[i] = 0;
+			highScore[i].name = " ";
+			highScore[i].score = 0;
 		}
 	}
 
-	void AddNewScore(int highScore[], int total_scores, int new_score)
+	void AddNewScore(Scores highScore[_sizeList], int new_score)
 	{
 		int aux = 0;
 		int newDat = new_score;
 
-		for (int i = 0; i < total_scores; i++)
+		for (int i = 0; i < _sizeList; i++)
 		{
-			if (newDat > highScore[i])
+			if (newDat > highScore[i].score)
 			{
-				aux = highScore[i];
+				aux = highScore[i].score;
 
-				highScore[i] = newDat;
+				highScore[i].score = newDat;
 
 				newDat = aux;
 			}
 		}
 	}
 
-	void Show(int highScore[], int total_scores)
+	void ShowHighScore(Scores highScore[_sizeList])
 	{
-
-
-
+		for (int i = 0; i < _sizeList; i++)
+		{
+			cout << " * " << highScore[i].name << " -- " << highScore[i].score << "\n"<< endl;
+		}
 	}
 }
